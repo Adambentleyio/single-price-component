@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Work Sans";
+  font-weight: 400;
+  --background-color: #e6eff6;
+  --primary-color: #2bb3b1;
+  --primary-color__light: #4abebd;
+  --text-accent: #bde032;
+  --primary-button: #bde032;
+  --color-light: #efefef;
+  --bg-light: #ffffff;
+  --text-base: #cccfd4;
+  --text-base-light: rgba(250, 250, 250, 0.7);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+p,
+li,
+a {
+  font-size: 1.5rem;
+  color: var(--text-base-light);
+}
+
+body {
+  width: 100%;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  background-color: var(--background-color);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-row > :first-child {
+  margin-right: 1.5rem;
+}
+
+.price--m {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--color-light);
+}
+
+.card {
+  display: grid;
+  /* border: 5px solid blue; */
+  background-color: var(--bg-light);
+  max-width: 35em;
+  grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+  grid-template-areas:
+    "header header"
+    "price price"
+    "footer footer";
+  margin-inline: 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card > * {
+  padding: 2.5rem;
+}
+
+.card > * > * {
+  padding: 0.5rem 0;
+}
+
+.card-head {
+  grid-area: header;
+}
+
+.card-head > h2 {
+  color: var(--primary-color);
+}
+
+.card-head > h3 {
+  color: var(--text-accent);
+}
+
+.card-head > p {
+  color: var(--text-base);
+}
+
+.card-price {
+  grid-area: price;
+  background-color: var(--primary-color);
+}
+
+.card-price > h2 {
+  color: var(--color-light);
+}
+
+.card-price > p > span {
+  color: var(--color-light);
+  font-size: 2rem;
+}
+
+.card-price > a {
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1.75rem 0;
+  margin-top: 1.75rem;
+  color: var(--color-light);
+  text-decoration: none;
+  background-color: var(--primary-button);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  font-weight: 600;
+}
+
+.card-footer {
+  grid-area: footer;
+  background-color: var(--primary-color__light);
+}
+
+.card-footer h2 {
+  color: var(--color-light);
+}
+
+.card-footer > ul * {
+  list-style: none;
+  text-decoration: none;
+}
+
+@media (min-width: 45em) {
+  .card {
+    grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr);
+    grid-template-areas:
+      "header header "
+      "price footer";
+    max-width: 65em;
+  }
+}
